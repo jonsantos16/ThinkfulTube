@@ -1,5 +1,6 @@
 const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search";
 // const key = "AIzaSyAYEZ75joUEkoj9Jo0RpVMEcFM55TtSE1k";
+let pgTkn = '';
 
 function watchSubmit() {
     $(".js-search-form").on('submit', event => {
@@ -15,7 +16,8 @@ function getDataFromApi(searchTerm, callback) {
     const query = {
         part: 'snippet',
         key: "AIzaSyAYEZ75joUEkoj9Jo0RpVMEcFM55TtSE1k",
-        q: `${searchTerm}`
+        q: `${searchTerm}`,
+        pageToken: pgTkn
     };
     $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 }
@@ -24,6 +26,8 @@ function displaySearchData(data) {
     console.log(data);
     // console.log(data.items[0].snippet.thumbnails.medium.url);
     const results = data.items.map((item) => renderResult(item));
+    pgTkn = data.nextPageToken;
+    console.log(pgTkn);
     $(".js-search-results").html(results);
 }
 
@@ -38,6 +42,19 @@ function renderResult(result) {
             <a href="https://www.youtube.com/channel/${result.id.channelId}" target="blank">${result.snippet.channelTitle}</a>
         </div>
     `;
+    watchButton();
 }
+
+// function watchButton() {
+//     $("button").on('click', event => {
+//         event.preventDefault();
+//         getNextData();
+//     });
+// }
+
+// function getNextData() {
+
+// }
+
 
 $(watchSubmit());
