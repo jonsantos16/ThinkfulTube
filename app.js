@@ -8,6 +8,8 @@ function watchSubmit() {
         const queryTarget = $(event.currentTarget).find('.js-query');
         const query = queryTarget.val();
         queryTarget.val("");
+        console.log('queryTarget is' + queryTarget);
+        console.log('query is' + query);
         getDataFromApi(query, displaySearchData);
     });
 }
@@ -19,7 +21,7 @@ function getDataFromApi(searchTerm, callback) {
         q: `${searchTerm}`,
         pageToken: pgTkn
     };
-    $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
+    console.log($.getJSON(YOUTUBE_SEARCH_URL, query, callback));
 }
 
 function displaySearchData(data) {

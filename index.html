@@ -9,23 +9,34 @@
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous">
         </script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="grid.css">
     </head>
     <body>
         <main>
-            <h1>Search videos from YouTube</h1>
-            <form action="#" class="js-search-form">
-                <label for ="query"></label>
-                <input type="text" class="js-query">
-                <button type="submit">Search</button>    
-            </form>
-            <h2>Results</h2>
-            <div class="js-search-results">
+            <div class="row">
+                <div class="col-1">
+                    <h1>Search videos from YouTube</h1>
+                    <form action="#" class="js-search-form">
+                        <label for ="query"></label>
+                        <input type="text" class="js-query">
+                        <button type="submit">Search</button>    
+                    </form>
+                    <div class="button-wrapper">
+                        <button type="button" class="prev nav-btn">Prev</button>
+                        <button type="button" class="next nav-btn">Next</button>
+                    </div>
+                </div>
+            </div>    
+            <div class="result-container results">
 
             </div>
-            <div>
-                <button type="button" class="next">Next</button>
+            <div class="button-wrapper">
+                <button type="button" class="prev nav-btn">Prev</button>
+                <button type="button" class="next nav-btn">Next</button>
             </div>
         </main>
-        <script src="app.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>
