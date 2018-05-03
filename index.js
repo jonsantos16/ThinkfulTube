@@ -44,6 +44,7 @@ const displayData = data => {
     console.log(data.items);
     const results = getGrid(data.items, 3);
     $('.results').html(results);
+    $('.results').prop('hidden', false);
 }
 
 const getGrid = (items, num) => {

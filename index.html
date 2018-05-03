@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="grid.css">
     </head>
     <body>
-        <main>
+        <header role="banner">
             <div class="row">
                 <div class="col-1">
                     <h1>Search videos from YouTube</h1>
@@ -28,8 +28,10 @@
                         <button type="button" class="next nav-btn">Next</button>
                     </div>
                 </div>
-            </div>    
-            <div class="result-container results">
+            </div> 
+        </header>
+        <main role="main" aria-live="assertive" >
+            <div class="result-container results" hidden>
 
             </div>
             <div class="button-wrapper">
