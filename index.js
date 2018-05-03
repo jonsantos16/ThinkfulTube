@@ -54,7 +54,7 @@ const getGrid = (items, num) => {
     items.forEach((item, i) => {
         columns += `<div class="col-${num} box">
             <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="blank">
-                <img src="${item.snippet.thumbnails.medium.url}">
+                <img src="${item.snippet.thumbnails.medium.url}" alt="thumbnail of ${item.snippet.title} video">
             </a>
             <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="blank">
                 <h3>${item.snippet.title}</h3>
